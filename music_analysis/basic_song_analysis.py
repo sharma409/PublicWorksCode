@@ -14,7 +14,6 @@ from pylab import *
 
 import os
 
-fs = 44100
 
 def store_as_wav(audioTrack):
     if audioTrack.endswith('.wav'):
@@ -41,7 +40,7 @@ def stream_power(chunksize=512, num_powers=8):
 
     for coeff in coeffs:    
         #TODO: figure out how long to sleep for
-        time_sleeping = fs/chunksize
+        time_sleeping = sampFreq/chunksize
         sleep(time_sleeping)
         print coeff
     return coeffs
